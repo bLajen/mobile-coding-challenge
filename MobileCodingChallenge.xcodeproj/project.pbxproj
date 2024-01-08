@@ -14,6 +14,7 @@
 		74B685082B4CB6780023B8A1 /* MobileCodingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B685072B4CB6780023B8A1 /* MobileCodingChallengeTests.swift */; };
 		74B685122B4CB6780023B8A1 /* MobileCodingChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B685112B4CB6780023B8A1 /* MobileCodingChallengeUITests.swift */; };
 		74B685142B4CB6780023B8A1 /* MobileCodingChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B685132B4CB6780023B8A1 /* MobileCodingChallengeUITestsLaunchTests.swift */; };
+		74B685242B4CBE6F0023B8A1 /* PhotoGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B685232B4CBE6F0023B8A1 /* PhotoGalleryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		74B6850D2B4CB6780023B8A1 /* MobileCodingChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileCodingChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B685112B4CB6780023B8A1 /* MobileCodingChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCodingChallengeUITests.swift; sourceTree = "<group>"; };
 		74B685132B4CB6780023B8A1 /* MobileCodingChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCodingChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		74B685232B4CBE6F0023B8A1 /* PhotoGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		74B685212B4CB9BC0023B8A1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				74B685232B4CBE6F0023B8A1 /* PhotoGalleryView.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B685242B4CBE6F0023B8A1 /* PhotoGalleryView.swift in Sources */,
 				74B684F92B4CB6770023B8A1 /* ContentView.swift in Sources */,
 				74B684F72B4CB6770023B8A1 /* MobileCodingChallengeApp.swift in Sources */,
 			);
