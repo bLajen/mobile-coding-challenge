@@ -94,9 +94,9 @@
 		74B684F52B4CB6770023B8A1 /* MobileCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				74B684F62B4CB6770023B8A1 /* MobileCodingChallengeApp.swift */,
-				74B684F82B4CB6770023B8A1 /* ContentView.swift */,
-				74B684FA2B4CB6780023B8A1 /* Assets.xcassets */,
+				74B685202B4CB99E0023B8A1 /* App */,
+				74B685212B4CB9BC0023B8A1 /* Scenes */,
+				74B685222B4CB9D70023B8A1 /* Resources */,
 				74B684FC2B4CB6780023B8A1 /* Preview Content */,
 			);
 			path = MobileCodingChallenge;
@@ -125,6 +125,30 @@
 				74B685132B4CB6780023B8A1 /* MobileCodingChallengeUITestsLaunchTests.swift */,
 			);
 			path = MobileCodingChallengeUITests;
+			sourceTree = "<group>";
+		};
+		74B685202B4CB99E0023B8A1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				74B684F82B4CB6770023B8A1 /* ContentView.swift */,
+				74B684F62B4CB6770023B8A1 /* MobileCodingChallengeApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		74B685212B4CB9BC0023B8A1 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		74B685222B4CB9D70023B8A1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				74B684FA2B4CB6780023B8A1 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
