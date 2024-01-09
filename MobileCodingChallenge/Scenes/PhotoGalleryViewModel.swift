@@ -11,7 +11,7 @@ protocol PhotoGalleryViewModelProtocol {
     var navigateToDetail: PassthroughSubject<Void, Never> { get }
 }
 
-class PhotoGalleryViewModel: PhotoGalleryViewModelProtocol, ObservableObject {
+final class PhotoGalleryViewModel: PhotoGalleryViewModelProtocol, ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     let navigateToDetail = PassthroughSubject<Void, Never>()
 }
