@@ -194,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				74B6853E2B4DA27D0023B8A1 /* REST */,
+				74B685582B4DF3890023B8A1 /* Request */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -216,6 +217,13 @@
 				74B685492B4DA63F0023B8A1 /* Constant.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		74B685582B4DF3890023B8A1 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
