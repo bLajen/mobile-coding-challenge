@@ -15,6 +15,10 @@
 		74B685122B4CB6780023B8A1 /* MobileCodingChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B685112B4CB6780023B8A1 /* MobileCodingChallengeUITests.swift */; };
 		74B685142B4CB6780023B8A1 /* MobileCodingChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B685132B4CB6780023B8A1 /* MobileCodingChallengeUITestsLaunchTests.swift */; };
 		74B685242B4CBE6F0023B8A1 /* PhotoGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B685232B4CBE6F0023B8A1 /* PhotoGalleryView.swift */; };
+		74B685352B4CF0650023B8A1 /* PhotoGalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B685342B4CF0640023B8A1 /* PhotoGalleryViewModel.swift */; };
+		74B685372B4CF1250023B8A1 /* PhotoGalleryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B685362B4CF1250023B8A1 /* PhotoGalleryCoordinator.swift */; };
+		74B6853A2B4CF1E20023B8A1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B685392B4CF1E20023B8A1 /* Coordinator.swift */; };
+		74B6853C2B4CF2700023B8A1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6853B2B4CF2700023B8A1 /* Route.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,10 @@
 		74B685112B4CB6780023B8A1 /* MobileCodingChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCodingChallengeUITests.swift; sourceTree = "<group>"; };
 		74B685132B4CB6780023B8A1 /* MobileCodingChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCodingChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		74B685232B4CBE6F0023B8A1 /* PhotoGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryView.swift; sourceTree = "<group>"; };
+		74B685342B4CF0640023B8A1 /* PhotoGalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryViewModel.swift; sourceTree = "<group>"; };
+		74B685362B4CF1250023B8A1 /* PhotoGalleryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGalleryCoordinator.swift; sourceTree = "<group>"; };
+		74B685392B4CF1E20023B8A1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		74B6853B2B4CF2700023B8A1 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,7 @@
 		74B684F52B4CB6770023B8A1 /* MobileCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				74B685382B4CF1760023B8A1 /* Navigation */,
 				74B685202B4CB99E0023B8A1 /* App */,
 				74B685212B4CB9BC0023B8A1 /* Scenes */,
 				74B685222B4CB9D70023B8A1 /* Resources */,
@@ -142,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				74B685232B4CBE6F0023B8A1 /* PhotoGalleryView.swift */,
+				74B685342B4CF0640023B8A1 /* PhotoGalleryViewModel.swift */,
+				74B685362B4CF1250023B8A1 /* PhotoGalleryCoordinator.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -152,6 +163,15 @@
 				74B684FA2B4CB6780023B8A1 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		74B685382B4CF1760023B8A1 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				74B685392B4CF1E20023B8A1 /* Coordinator.swift */,
+				74B6853B2B4CF2700023B8A1 /* Route.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,8 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B685352B4CF0650023B8A1 /* PhotoGalleryViewModel.swift in Sources */,
+				74B685372B4CF1250023B8A1 /* PhotoGalleryCoordinator.swift in Sources */,
+				74B6853A2B4CF1E20023B8A1 /* Coordinator.swift in Sources */,
 				74B685242B4CBE6F0023B8A1 /* PhotoGalleryView.swift in Sources */,
 				74B684F92B4CB6770023B8A1 /* ContentView.swift in Sources */,
+				74B6853C2B4CF2700023B8A1 /* Route.swift in Sources */,
 				74B684F72B4CB6770023B8A1 /* MobileCodingChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
