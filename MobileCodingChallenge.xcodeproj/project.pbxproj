@@ -104,8 +104,9 @@
 		74B684F52B4CB6770023B8A1 /* MobileCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				74B685382B4CF1760023B8A1 /* Navigation */,
+				74B6853D2B4CF5470023B8A1 /* Network */,
 				74B685202B4CB99E0023B8A1 /* App */,
+				74B685382B4CF1760023B8A1 /* Navigation */,
 				74B685212B4CB9BC0023B8A1 /* Scenes */,
 				74B685222B4CB9D70023B8A1 /* Resources */,
 				74B684FC2B4CB6780023B8A1 /* Preview Content */,
@@ -172,6 +173,13 @@
 				74B6853B2B4CF2700023B8A1 /* Route.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		74B6853D2B4CF5470023B8A1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
