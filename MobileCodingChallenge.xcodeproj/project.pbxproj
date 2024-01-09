@@ -68,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B685432B4DA3A90023B8A1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +199,9 @@
 			dependencies = (
 			);
 			name = MobileCodingChallenge;
+			packageProductDependencies = (
+				74B685422B4DA3A90023B8A1 /* Alamofire */,
+			);
 			productName = MobileCodingChallenge;
 			productReference = 74B684F32B4CB6770023B8A1 /* MobileCodingChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -270,6 +274,9 @@
 				Base,
 			);
 			mainGroup = 74B684EA2B4CB6770023B8A1;
+			packageReferences = (
+				74B685412B4DA3A90023B8A1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 74B684F42B4CB6770023B8A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
