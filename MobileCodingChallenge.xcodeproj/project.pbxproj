@@ -29,7 +29,7 @@
 		74B6855A2B4DF6D50023B8A1 /* PhotosService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B685592B4DF6D50023B8A1 /* PhotosService.swift */; };
 		74B6855E2B4DF80C0023B8A1 /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6855D2B4DF80C0023B8A1 /* PhotoResponse.swift */; };
 		74B685602B4DF8F60023B8A1 /* PhotosRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B6855F2B4DF8F60023B8A1 /* PhotosRoutes.swift */; };
-		74B685622B4DFA360023B8A1 /* PhotoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B685612B4DFA360023B8A1 /* PhotoRouter.swift */; };
+		74B685622B4DFA360023B8A1 /* PhotosRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B685612B4DFA360023B8A1 /* PhotosRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +74,7 @@
 		74B685592B4DF6D50023B8A1 /* PhotosService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosService.swift; sourceTree = "<group>"; };
 		74B6855D2B4DF80C0023B8A1 /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
 		74B6855F2B4DF8F60023B8A1 /* PhotosRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRoutes.swift; sourceTree = "<group>"; };
-		74B685612B4DFA360023B8A1 /* PhotoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRouter.swift; sourceTree = "<group>"; };
+		74B685612B4DFA360023B8A1 /* PhotosRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,7 +240,7 @@
 			children = (
 				74B685592B4DF6D50023B8A1 /* PhotosService.swift */,
 				74B6855F2B4DF8F60023B8A1 /* PhotosRoutes.swift */,
-				74B685612B4DFA360023B8A1 /* PhotoRouter.swift */,
+				74B685612B4DFA360023B8A1 /* PhotosRouter.swift */,
 				74B6855C2B4DF7C70023B8A1 /* Models */,
 			);
 			path = Photos;
@@ -391,7 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74B685352B4CF0650023B8A1 /* PhotoGalleryViewModel.swift in Sources */,
-				74B685622B4DFA360023B8A1 /* PhotoRouter.swift in Sources */,
+				74B685622B4DFA360023B8A1 /* PhotosRouter.swift in Sources */,
 				74B685452B4DA4AA0023B8A1 /* APIRouter.swift in Sources */,
 				74B685372B4CF1250023B8A1 /* PhotoGalleryCoordinator.swift in Sources */,
 				74B6855E2B4DF80C0023B8A1 /* PhotoResponse.swift in Sources */,
