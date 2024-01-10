@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		744999E72B4E2C4300E643B9 /* UserLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744999E62B4E2C4300E643B9 /* UserLinks.swift */; };
+		744999E92B4E2C6E00E643B9 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744999E82B4E2C6E00E643B9 /* ProfileImage.swift */; };
+		744999EB2B4E2C9A00E643B9 /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744999EA2B4E2C9A00E643B9 /* Social.swift */; };
+		744999ED2B4E2CDA00E643B9 /* Sponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744999EC2B4E2CDA00E643B9 /* Sponsor.swift */; };
+		744999EF2B4E2D2200E643B9 /* Sponsorship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744999EE2B4E2D2200E643B9 /* Sponsorship.swift */; };
+		744999F12B4E2E7400E643B9 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744999F02B4E2E7400E643B9 /* Urls.swift */; };
+		744999F32B4E2EBF00E643B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744999F22B4E2EBF00E643B9 /* User.swift */; };
+		744999F52B4E2EE100E643B9 /* TopicSubmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744999F42B4E2EE100E643B9 /* TopicSubmission.swift */; };
 		74B684F72B4CB6770023B8A1 /* MobileCodingChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B684F62B4CB6770023B8A1 /* MobileCodingChallengeApp.swift */; };
 		74B684F92B4CB6770023B8A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B684F82B4CB6770023B8A1 /* ContentView.swift */; };
 		74B684FB2B4CB6780023B8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74B684FA2B4CB6780023B8A1 /* Assets.xcassets */; };
@@ -50,6 +58,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		744999E62B4E2C4300E643B9 /* UserLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLinks.swift; sourceTree = "<group>"; };
+		744999E82B4E2C6E00E643B9 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
+		744999EA2B4E2C9A00E643B9 /* Social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
+		744999EC2B4E2CDA00E643B9 /* Sponsor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sponsor.swift; sourceTree = "<group>"; };
+		744999EE2B4E2D2200E643B9 /* Sponsorship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sponsorship.swift; sourceTree = "<group>"; };
+		744999F02B4E2E7400E643B9 /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		744999F22B4E2EBF00E643B9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		744999F42B4E2EE100E643B9 /* TopicSubmission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicSubmission.swift; sourceTree = "<group>"; };
 		74B684F32B4CB6770023B8A1 /* MobileCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B684F62B4CB6770023B8A1 /* MobileCodingChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCodingChallengeApp.swift; sourceTree = "<group>"; };
 		74B684F82B4CB6770023B8A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -250,6 +266,14 @@
 			isa = PBXGroup;
 			children = (
 				74B6855D2B4DF80C0023B8A1 /* PhotoResponse.swift */,
+				744999E62B4E2C4300E643B9 /* UserLinks.swift */,
+				744999E82B4E2C6E00E643B9 /* ProfileImage.swift */,
+				744999EA2B4E2C9A00E643B9 /* Social.swift */,
+				744999EC2B4E2CDA00E643B9 /* Sponsor.swift */,
+				744999EE2B4E2D2200E643B9 /* Sponsorship.swift */,
+				744999F02B4E2E7400E643B9 /* Urls.swift */,
+				744999F22B4E2EBF00E643B9 /* User.swift */,
+				744999F42B4E2EE100E643B9 /* TopicSubmission.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -391,19 +415,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				74B685352B4CF0650023B8A1 /* PhotoGalleryViewModel.swift in Sources */,
+				744999F12B4E2E7400E643B9 /* Urls.swift in Sources */,
 				74B685622B4DFA360023B8A1 /* PhotosRouter.swift in Sources */,
+				744999E72B4E2C4300E643B9 /* UserLinks.swift in Sources */,
 				74B685452B4DA4AA0023B8A1 /* APIRouter.swift in Sources */,
 				74B685372B4CF1250023B8A1 /* PhotoGalleryCoordinator.swift in Sources */,
 				74B6855E2B4DF80C0023B8A1 /* PhotoResponse.swift in Sources */,
 				74B6853A2B4CF1E20023B8A1 /* Coordinator.swift in Sources */,
 				74B6855A2B4DF6D50023B8A1 /* PhotosService.swift in Sources */,
 				74B685242B4CBE6F0023B8A1 /* PhotoGalleryView.swift in Sources */,
+				744999ED2B4E2CDA00E643B9 /* Sponsor.swift in Sources */,
+				744999F52B4E2EE100E643B9 /* TopicSubmission.swift in Sources */,
 				74B684F92B4CB6770023B8A1 /* ContentView.swift in Sources */,
+				744999EB2B4E2C9A00E643B9 /* Social.swift in Sources */,
 				74B6853C2B4CF2700023B8A1 /* Route.swift in Sources */,
+				744999E92B4E2C6E00E643B9 /* ProfileImage.swift in Sources */,
 				74B685482B4DA59D0023B8A1 /* ErrorPublisher.swift in Sources */,
 				74B6854A2B4DA63F0023B8A1 /* Constant.swift in Sources */,
 				74B685402B4DA2B90023B8A1 /* APIService.swift in Sources */,
 				74B685602B4DF8F60023B8A1 /* PhotosRoutes.swift in Sources */,
+				744999EF2B4E2D2200E643B9 /* Sponsorship.swift in Sources */,
+				744999F32B4E2EBF00E643B9 /* User.swift in Sources */,
 				74B684F72B4CB6770023B8A1 /* MobileCodingChallengeApp.swift in Sources */,
 				74B6854E2B4DCE260023B8A1 /* APIClient.swift in Sources */,
 				74B685502B4DD2F60023B8A1 /* APIError.swift in Sources */,
