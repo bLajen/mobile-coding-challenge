@@ -15,6 +15,8 @@
 		744999F12B4E2E7400E643B9 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744999F02B4E2E7400E643B9 /* Urls.swift */; };
 		744999F32B4E2EBF00E643B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744999F22B4E2EBF00E643B9 /* User.swift */; };
 		744999F52B4E2EE100E643B9 /* TopicSubmission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744999F42B4E2EE100E643B9 /* TopicSubmission.swift */; };
+		744999FA2B4EEA0E00E643B9 /* PhotosParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744999F92B4EEA0E00E643B9 /* PhotosParams.swift */; };
+		744999FD2B4EEB8100E643B9 /* Encodable+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744999FC2B4EEB8100E643B9 /* Encodable+JSON.swift */; };
 		74B684F72B4CB6770023B8A1 /* MobileCodingChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B684F62B4CB6770023B8A1 /* MobileCodingChallengeApp.swift */; };
 		74B684F92B4CB6770023B8A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B684F82B4CB6770023B8A1 /* ContentView.swift */; };
 		74B684FB2B4CB6780023B8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74B684FA2B4CB6780023B8A1 /* Assets.xcassets */; };
@@ -66,6 +68,8 @@
 		744999F02B4E2E7400E643B9 /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
 		744999F22B4E2EBF00E643B9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		744999F42B4E2EE100E643B9 /* TopicSubmission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicSubmission.swift; sourceTree = "<group>"; };
+		744999F92B4EEA0E00E643B9 /* PhotosParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosParams.swift; sourceTree = "<group>"; };
+		744999FC2B4EEB8100E643B9 /* Encodable+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+JSON.swift"; sourceTree = "<group>"; };
 		74B684F32B4CB6770023B8A1 /* MobileCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B684F62B4CB6770023B8A1 /* MobileCodingChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCodingChallengeApp.swift; sourceTree = "<group>"; };
 		74B684F82B4CB6770023B8A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +123,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		744999F82B4EE9ED00E643B9 /* Params */ = {
+			isa = PBXGroup;
+			children = (
+				744999F92B4EEA0E00E643B9 /* PhotosParams.swift */,
+			);
+			path = Params;
+			sourceTree = "<group>";
+		};
 		74B684EA2B4CB6770023B8A1 = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +249,7 @@
 		74B685462B4DA5760023B8A1 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				744999FC2B4EEB8100E643B9 /* Encodable+JSON.swift */,
 				74B685472B4DA59D0023B8A1 /* ErrorPublisher.swift */,
 				74B685492B4DA63F0023B8A1 /* Constant.swift */,
 			);
@@ -257,6 +270,7 @@
 				74B685592B4DF6D50023B8A1 /* PhotosService.swift */,
 				74B6855F2B4DF8F60023B8A1 /* PhotosRoutes.swift */,
 				74B685612B4DFA360023B8A1 /* PhotosRouter.swift */,
+				744999F82B4EE9ED00E643B9 /* Params */,
 				74B6855C2B4DF7C70023B8A1 /* Models */,
 			);
 			path = Photos;
@@ -414,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				744999FA2B4EEA0E00E643B9 /* PhotosParams.swift in Sources */,
 				74B685352B4CF0650023B8A1 /* PhotoGalleryViewModel.swift in Sources */,
 				744999F12B4E2E7400E643B9 /* Urls.swift in Sources */,
 				74B685622B4DFA360023B8A1 /* PhotosRouter.swift in Sources */,
@@ -439,6 +454,7 @@
 				74B684F72B4CB6770023B8A1 /* MobileCodingChallengeApp.swift in Sources */,
 				74B6854E2B4DCE260023B8A1 /* APIClient.swift in Sources */,
 				74B685502B4DD2F60023B8A1 /* APIError.swift in Sources */,
+				744999FD2B4EEB8100E643B9 /* Encodable+JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

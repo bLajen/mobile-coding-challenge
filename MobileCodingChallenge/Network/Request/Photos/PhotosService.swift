@@ -8,7 +8,7 @@
 import Alamofire
 
 protocol PhotosServiceProtocol: AnyObject {
-    func getPhotos() -> APIPublisher<[PhotoResponse]>
+    func getPhotos(params: PhotosParams) -> APIPublisher<[PhotoResponse]>
 }
 
 class PhotosService: PhotosServiceProtocol, APIService {
@@ -18,7 +18,7 @@ class PhotosService: PhotosServiceProtocol, APIService {
     
     private init() {}
     
-    func getPhotos() -> APIPublisher<[PhotoResponse]> {
-        request(route: .getPhotos)
+    func getPhotos(params: PhotosParams) -> APIPublisher<[PhotoResponse]> {
+        request(route: .getPhotos(params))
     }
 }

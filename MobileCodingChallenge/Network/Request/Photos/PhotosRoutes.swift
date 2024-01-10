@@ -8,7 +8,7 @@
 import Alamofire
 
 enum PhotosRoutes {
-    case getPhotos
+    case getPhotos(PhotosParams)
 }
 
 extension PhotosRoutes: PhotosRouter {
@@ -27,8 +27,8 @@ extension PhotosRoutes: PhotosRouter {
     
     var parameters: Parameters? {
         switch self {
-        case let .getPhotos:
-            return nil
+        case let .getPhotos(params):
+            return params.json
         }
     }
 }
