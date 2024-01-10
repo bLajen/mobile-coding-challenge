@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PhotoGalleryView: View {
+    @ObservedObject var viewModel: PhotoGalleryViewModel
+    
     var body: some View {
         VStack {
             

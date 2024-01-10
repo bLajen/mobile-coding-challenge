@@ -20,6 +20,7 @@ final class PhotoGalleryCoordinator: Coordinator {
     
     @ViewBuilder
     func start() -> some View {
+        PhotoGalleryView(viewModel: photoGalleryViewModel)
     }
     
     private func bind() {

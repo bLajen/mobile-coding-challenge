@@ -131,6 +131,13 @@
 			path = Params;
 			sourceTree = "<group>";
 		};
+		74499A002B4F42CA00E643B9 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		74B684EA2B4CB6770023B8A1 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +161,7 @@
 		74B684F52B4CB6770023B8A1 /* MobileCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				74499A002B4F42CA00E643B9 /* CollectionView */,
 				74B685202B4CB99E0023B8A1 /* App */,
 				74B685382B4CF1760023B8A1 /* Navigation */,
 				74B685462B4DA5760023B8A1 /* Common */,
