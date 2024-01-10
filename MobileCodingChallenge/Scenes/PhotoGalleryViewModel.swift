@@ -9,9 +9,49 @@ import Combine
 
 protocol PhotoGalleryViewModelProtocol {
     var navigateToDetail: PassthroughSubject<Void, Never> { get }
+    var photos: [PhotoResponse] { get }
 }
 
 final class PhotoGalleryViewModel: PhotoGalleryViewModelProtocol, ObservableObject {
-    private var cancellables = Set<AnyCancellable>()
+    @Published var photos: [PhotoResponse] = []
+    
     let navigateToDetail = PassthroughSubject<Void, Never>()
+    
+    private var cancellables = Set<AnyCancellable>()
+    private var isLoading = false
+    
+    // Photos service request params
+    private var page = 1
+    private let perPage = 20
+    
+    init() {
+        getPhotos()
+    }
+    
+    func getPhotos() {
+        let service = PhotosService.shared
+        let clientId = Constant.clientID.rawValue
+        let page = String(page)
+        let perPage = String(perPage)
+        
+        let params = PhotosParams(clientId: clientId,
+                                  page: page,
+                                  perPage: perPage)
+        
+        service
+            .getPhotos(params: params)
+            .sink { [weak self] completion in
+                self?.isLoading = false
+                
+                switch completion {
+                case .finished: break
+                case let .failure(error):
+                    print(error) // TODO: Error handling
+                }
+            } receiveValue: { [weak self] response in
+                self?.photos.append(contentsOf: response)
+                self?.page += 1
+            }
+            .store(in: &cancellables)
+    }
 }
