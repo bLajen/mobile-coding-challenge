@@ -25,6 +25,7 @@
 		74499A4E2B504E0100E643B9 /* GalleryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74499A4D2B504E0100E643B9 /* GalleryCellViewModel.swift */; };
 		74499A502B50552200E643B9 /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74499A4F2B50552200E643B9 /* DeviceRotationViewModifier.swift */; };
 		74499A522B5055AF00E643B9 /* UICollectionView+hosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74499A512B5055AF00E643B9 /* UICollectionView+hosting.swift */; };
+		74499A692B50657900E643B9 /* Set+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74499A682B50657900E643B9 /* Set+Cancellable.swift */; };
 		74B684F72B4CB6770023B8A1 /* MobileCodingChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B684F62B4CB6770023B8A1 /* MobileCodingChallengeApp.swift */; };
 		74B684F92B4CB6770023B8A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B684F82B4CB6770023B8A1 /* ContentView.swift */; };
 		74B684FB2B4CB6780023B8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74B684FA2B4CB6780023B8A1 /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		74499A4D2B504E0100E643B9 /* GalleryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCellViewModel.swift; sourceTree = "<group>"; };
 		74499A4F2B50552200E643B9 /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationViewModifier.swift; sourceTree = "<group>"; };
 		74499A512B5055AF00E643B9 /* UICollectionView+hosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+hosting.swift"; sourceTree = "<group>"; };
+		74499A682B50657900E643B9 /* Set+Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Cancellable.swift"; sourceTree = "<group>"; };
 		74B684F32B4CB6770023B8A1 /* MobileCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B684F62B4CB6770023B8A1 /* MobileCodingChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCodingChallengeApp.swift; sourceTree = "<group>"; };
 		74B684F82B4CB6770023B8A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 				74B685492B4DA63F0023B8A1 /* Constant.swift */,
 				74499A4F2B50552200E643B9 /* DeviceRotationViewModifier.swift */,
 				74499A512B5055AF00E643B9 /* UICollectionView+hosting.swift */,
+				74499A682B50657900E643B9 /* Set+Cancellable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				74499A062B4F5D9200E643B9 /* CoreCollectionView.swift in Sources */,
 				74499A4E2B504E0100E643B9 /* GalleryCellViewModel.swift in Sources */,
 				744999EB2B4E2C9A00E643B9 /* Social.swift in Sources */,
+				74499A692B50657900E643B9 /* Set+Cancellable.swift in Sources */,
 				74B6853C2B4CF2700023B8A1 /* Route.swift in Sources */,
 				744999E92B4E2C6E00E643B9 /* ProfileImage.swift in Sources */,
 				74B685482B4DA59D0023B8A1 /* ErrorPublisher.swift in Sources */,

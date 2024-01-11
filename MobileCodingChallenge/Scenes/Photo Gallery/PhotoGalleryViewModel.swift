@@ -38,6 +38,8 @@ final class PhotoGalleryViewModel: PhotoGalleryViewModelProtocol, ObservableObje
     }
     
     func getPhotos() {
+        guard !isLoading else { return }
+        
         let service = PhotosService.shared
         let clientId = Constant.clientID.rawValue
         let page = String(page)
@@ -58,7 +60,9 @@ final class PhotoGalleryViewModel: PhotoGalleryViewModelProtocol, ObservableObje
                     print(error) // TODO: Error handling
                 }
             } receiveValue: { [weak self] response in
+                self?.isLoading = false
                 self?.photos.append(contentsOf: response)
+                self?.snapshot.appendItems(response)
                 self?.page += 1
             }
             .store(in: &cancellables)
