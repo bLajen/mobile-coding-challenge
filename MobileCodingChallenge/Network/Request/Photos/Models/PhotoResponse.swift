@@ -19,7 +19,6 @@ struct PhotoResponse: Codable {
     let blurHash: String?
     let description: String?
     let altDescription: String?
-    let breadcrumbs: [String]?
     let urls: Urls?
     let links: UserLinks?
     let likes: Int?
@@ -41,7 +40,6 @@ struct PhotoResponse: Codable {
         case blurHash = "blur_hash"
         case description = "description"
         case altDescription = "alt_description"
-        case breadcrumbs = "breadcrumbs"
         case urls = "urls"
         case links = "links"
         case likes = "likes"
@@ -65,7 +63,6 @@ struct PhotoResponse: Codable {
         blurHash = try values.decodeIfPresent(String.self, forKey: .blurHash)
         description = try values.decodeIfPresent(String.self, forKey: .description)
         altDescription = try values.decodeIfPresent(String.self, forKey: .altDescription)
-        breadcrumbs = try values.decodeIfPresent([String].self, forKey: .breadcrumbs)
         urls = try values.decodeIfPresent(Urls.self, forKey: .urls)
         links = try values.decodeIfPresent(UserLinks.self, forKey: .links)
         likes = try values.decodeIfPresent(Int.self, forKey: .likes)
