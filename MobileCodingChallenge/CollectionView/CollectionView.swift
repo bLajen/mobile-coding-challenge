@@ -22,6 +22,8 @@ where SectionType: Hashable & Sendable,
     
     init(snapshot: Snapshot,
          photos: Binding<[PhotoResponse]>,
+         orientation: Binding<UIDeviceOrientation>,
+         collectionViewLayout: CollectionViewCustomLayout,
          cellProvider: @escaping DataSource.CellProvider) {
         self._photos = photos
         self.snapshot = snapshot
