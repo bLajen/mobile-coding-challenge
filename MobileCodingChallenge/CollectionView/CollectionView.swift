@@ -42,7 +42,7 @@ extension CollectionView: UIViewRepresentable {
     func makeUIView(context: Context) -> BaseCollectionView {
         collectionViewLayout.delegate = context.coordinator
         let collectionView = BaseCollectionView(frame: .zero,
-                                                collectionViewLayout: UICollectionViewLayout(),
+                                                collectionViewLayout: collectionViewLayout,
                                                 cellProvider: cellProvider)
         collectionView.delegate = context.coordinator
         
