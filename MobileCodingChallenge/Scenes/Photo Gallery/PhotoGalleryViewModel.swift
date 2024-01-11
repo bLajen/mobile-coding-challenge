@@ -6,6 +6,7 @@
 //
 
 import Combine
+import SwiftUI
 
 protocol PhotoGalleryViewModelProtocol {
     var navigateToDetail: PassthroughSubject<Void, Never> { get }
@@ -13,7 +14,14 @@ protocol PhotoGalleryViewModelProtocol {
 }
 
 final class PhotoGalleryViewModel: PhotoGalleryViewModelProtocol, ObservableObject {
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, PhotoResponse>
+    
     @Published var photos: [PhotoResponse] = []
+    @Published var snapshot: Snapshot = {
+        var initialSnapshot = Snapshot()
+        initialSnapshot.appendSections([0])
+        return initialSnapshot
+    }()
     
     let navigateToDetail = PassthroughSubject<Void, Never>()
     

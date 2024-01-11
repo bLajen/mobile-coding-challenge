@@ -144,6 +144,16 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		74499A3F2B4FB34300E643B9 /* Photo Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				74B685232B4CBE6F0023B8A1 /* PhotoGalleryView.swift */,
+				74B685342B4CF0640023B8A1 /* PhotoGalleryViewModel.swift */,
+				74B685362B4CF1250023B8A1 /* PhotoGalleryCoordinator.swift */,
+			);
+			path = "Photo Gallery";
+			sourceTree = "<group>";
+		};
 		74B684EA2B4CB6770023B8A1 = {
 			isa = PBXGroup;
 			children = (
@@ -216,9 +226,7 @@
 		74B685212B4CB9BC0023B8A1 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				74B685232B4CBE6F0023B8A1 /* PhotoGalleryView.swift */,
-				74B685342B4CF0640023B8A1 /* PhotoGalleryViewModel.swift */,
-				74B685362B4CF1250023B8A1 /* PhotoGalleryCoordinator.swift */,
+				74499A3F2B4FB34300E643B9 /* Photo Gallery */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
