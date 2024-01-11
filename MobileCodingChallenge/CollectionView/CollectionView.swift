@@ -16,9 +16,11 @@ where SectionType: Hashable & Sendable,
     typealias Snapshot = NSDiffableDataSourceSnapshot<SectionType, ItemType>
     
     @Binding private var photos: [PhotoResponse]
+    @Binding private var orientation: UIDeviceOrientation
     
     private let cellProvider: DataSource.CellProvider
     private let snapshot: Snapshot
+    private let collectionViewLayout: CollectionViewCustomLayout
     
     init(snapshot: Snapshot,
          photos: Binding<[PhotoResponse]>,
@@ -26,8 +28,11 @@ where SectionType: Hashable & Sendable,
          collectionViewLayout: CollectionViewCustomLayout,
          cellProvider: @escaping DataSource.CellProvider) {
         self._photos = photos
+        self._orientation = orientation
+        
         self.snapshot = snapshot
         self.cellProvider = cellProvider
+        self.collectionViewLayout = collectionViewLayout
     }
 }
 
@@ -35,9 +40,12 @@ where SectionType: Hashable & Sendable,
 
 extension CollectionView: UIViewRepresentable {
     func makeUIView(context: Context) -> BaseCollectionView {
+        collectionViewLayout.delegate = context.coordinator
         let collectionView = BaseCollectionView(frame: .zero,
                                                 collectionViewLayout: UICollectionViewLayout(),
                                                 cellProvider: cellProvider)
+        collectionView.delegate = context.coordinator
+        
         return collectionView
     }
     
@@ -51,7 +59,9 @@ extension CollectionView: UIViewRepresentable {
         Coordinator(photos: $photos)
     }
     
-    final class Coordinator: NSObject {
+    final class Coordinator: NSObject,
+                             CollectionViewCustomLayoutDelegate,
+                             UICollectionViewDelegate {
         @Binding private var photos: [PhotoResponse]
         
         init(photos: Binding<[PhotoResponse]>) {
