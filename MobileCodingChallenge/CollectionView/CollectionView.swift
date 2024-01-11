@@ -18,6 +18,9 @@ where SectionType: Hashable & Sendable,
     @Binding private var photos: [PhotoResponse]
     @Binding private var orientation: UIDeviceOrientation
     
+    private var didItemSelectAt: PassthroughSubject<IndexPath, Never>
+    private var fetchMoreGalleryItem: PassthroughSubject<Void, Never>
+    
     private let cellProvider: DataSource.CellProvider
     private let snapshot: Snapshot
     private let collectionViewLayout: CollectionViewCustomLayout
@@ -25,11 +28,15 @@ where SectionType: Hashable & Sendable,
     init(snapshot: Snapshot,
          photos: Binding<[PhotoResponse]>,
          orientation: Binding<UIDeviceOrientation>,
+         didItemSelectAt: PassthroughSubject<IndexPath, Never>,
+         fetchMoreGalleryItem: PassthroughSubject<Void, Never>,
          collectionViewLayout: CollectionViewCustomLayout,
          cellProvider: @escaping DataSource.CellProvider) {
         self._photos = photos
         self._orientation = orientation
         
+        self.didItemSelectAt = didItemSelectAt
+        self.fetchMoreGalleryItem = fetchMoreGalleryItem
         self.snapshot = snapshot
         self.cellProvider = cellProvider
         self.collectionViewLayout = collectionViewLayout
@@ -56,7 +63,9 @@ extension CollectionView: UIViewRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(photos: $photos)
+        Coordinator(photos: $photos,
+                    didItemSelectAt: didItemSelectAt,
+                    fetchMoreGalleryItem: fetchMoreGalleryItem)
     }
     
     final class Coordinator: NSObject,
@@ -64,8 +73,16 @@ extension CollectionView: UIViewRepresentable {
                              UICollectionViewDelegate {
         @Binding private var photos: [PhotoResponse]
         
-        init(photos: Binding<[PhotoResponse]>) {
+        private var didItemSelectAt: PassthroughSubject<IndexPath, Never>
+        private var fetchMoreGalleryItem: PassthroughSubject<Void, Never>
+        
+        init(photos: Binding<[PhotoResponse]>,
+             didItemSelectAt: PassthroughSubject<IndexPath, Never>,
+             fetchMoreGalleryItem: PassthroughSubject<Void, Never>) {
             self._photos = photos
+            
+            self.didItemSelectAt = didItemSelectAt
+            self.fetchMoreGalleryItem = fetchMoreGalleryItem
         }
         
         func collectionView(_ collectionView: UICollectionView,
@@ -79,6 +96,25 @@ extension CollectionView: UIViewRepresentable {
             let aspectRatio = CGFloat(width) / CGFloat(height)
             
             return cellWidth / aspectRatio
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            didItemSelectAt.send(indexPath)
+        }
+        
+        func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+            let offset = scrollView.contentOffset
+            let bounds = scrollView.bounds
+            let size = scrollView.contentSize
+            
+            let offsetY = offset.y + bounds.size.height
+            let sizeHeight = size.height
+            
+            let reloadThreshold = CGFloat(30)
+            if offsetY > sizeHeight + reloadThreshold {
+                fetchMoreGalleryItem.send()
+                //TODO: Add loading state with a delay
+            }
         }
     }
 }

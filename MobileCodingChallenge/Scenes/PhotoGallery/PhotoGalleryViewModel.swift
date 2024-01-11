@@ -8,14 +8,18 @@
 import Combine
 import SwiftUI
 
+typealias Snapshot = NSDiffableDataSourceSnapshot<Int, PhotoResponse>
+
 protocol PhotoGalleryViewModelProtocol {
-    var navigateToDetail: PassthroughSubject<Void, Never> { get }
+    var snapshot: Snapshot { get }
     var photos: [PhotoResponse] { get }
+    var orientation: UIDeviceOrientation { get }
+    var fetchMoreGalleryItem: PassthroughSubject<Void, Never> { get }
+    var didItemSelectAt: PassthroughSubject<IndexPath, Never> { get }
 }
 
-final class PhotoGalleryViewModel: PhotoGalleryViewModelProtocol, ObservableObject {
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, PhotoResponse>
-    
+final class PhotoGalleryViewModel: PhotoGalleryViewModelProtocol,
+                                   ObservableObject {
     @Published var orientation: UIDeviceOrientation = UIDeviceOrientation.unknown
     @Published var photos: [PhotoResponse] = []
     @Published var snapshot: Snapshot = {
@@ -24,17 +28,19 @@ final class PhotoGalleryViewModel: PhotoGalleryViewModelProtocol, ObservableObje
         return initialSnapshot
     }()
     
-    let navigateToDetail = PassthroughSubject<Void, Never>()
+    let didItemSelectAt = PassthroughSubject<IndexPath, Never>()
+    let fetchMoreGalleryItem = PassthroughSubject<Void, Never>()
     
     private var cancellables = Set<AnyCancellable>()
     private var isLoading = false
     
     // Photos service request params
     private var page = 1
-    private let perPage = 20
+    private let perPage = 40
     
     init() {
         getPhotos()
+        bind()
     }
     
     func getPhotos() {
@@ -66,5 +72,12 @@ final class PhotoGalleryViewModel: PhotoGalleryViewModelProtocol, ObservableObje
                 self?.page += 1
             }
             .store(in: &cancellables)
+    }
+    
+    private func bind() {
+        cancellables.insert(
+            fetchMoreGalleryItem
+                .sink { [weak self] in self?.getPhotos() }
+        )
     }
 }

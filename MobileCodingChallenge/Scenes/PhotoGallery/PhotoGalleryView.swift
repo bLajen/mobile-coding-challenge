@@ -21,6 +21,8 @@ struct PhotoGalleryView: View {
             CollectionView(snapshot: viewModel.snapshot,
                            photos: $viewModel.photos,
                            orientation: $orientation,
+                           didItemSelectAt: viewModel.didItemSelectAt,
+                           fetchMoreGalleryItem: viewModel.fetchMoreGalleryItem,
                            collectionViewLayout: collectionViewCustomLayout(),
                            cellProvider: cellProvider)
         }
