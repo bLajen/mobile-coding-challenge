@@ -27,7 +27,6 @@ where SectionType: Hashable & Sendable,
         self.snapshot = snapshot
         self.cellProvider = cellProvider
     }
-    
 }
 
 // MARK: UIViewRepresentable
