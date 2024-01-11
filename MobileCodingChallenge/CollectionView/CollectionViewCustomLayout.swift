@@ -52,7 +52,6 @@ class CollectionViewCustomLayout: UICollectionViewLayout {
         guard let collectionView = collectionView,
               collectionView.numberOfSections > 0 else { return }
         
-        collectionView.backgroundColor = .black
         let columnWidth = contentWidth / CGFloat(numberOfColumns)
         var xOffset: [CGFloat] = []
         for column in 0 ..< numberOfColumns {

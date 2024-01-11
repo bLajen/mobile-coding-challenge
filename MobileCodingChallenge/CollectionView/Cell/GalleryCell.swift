@@ -13,13 +13,11 @@ struct GalleryCell: View {
     // TODO: Remove colors
     var body: some View {
         ZStack {
-            Color.red
             LazyImage(url: URL(string: viewModel.item.urls?.regular ?? "")) { state in
                 if let image = state.image {
                     image.resizable().aspectRatio(contentMode: ContentMode.fit)
                 }
             }
         }
-        .background(Color.gray)
     }
 }
