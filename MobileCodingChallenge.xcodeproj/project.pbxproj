@@ -20,6 +20,9 @@
 		74499A022B4F44F700E643B9 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74499A012B4F44F700E643B9 /* CollectionView.swift */; };
 		74499A062B4F5D9200E643B9 /* CoreCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74499A052B4F5D9200E643B9 /* CoreCollectionView.swift */; };
 		74499A462B50481500E643B9 /* CollectionViewCustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74499A452B50481500E643B9 /* CollectionViewCustomLayout.swift */; };
+		74499A4A2B504DA700E643B9 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 74499A492B504DA700E643B9 /* NukeUI */; };
+		74499A4C2B504DC500E643B9 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74499A4B2B504DC500E643B9 /* GalleryCell.swift */; };
+		74499A4E2B504E0100E643B9 /* GalleryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74499A4D2B504E0100E643B9 /* GalleryCellViewModel.swift */; };
 		74B684F72B4CB6770023B8A1 /* MobileCodingChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B684F62B4CB6770023B8A1 /* MobileCodingChallengeApp.swift */; };
 		74B684F92B4CB6770023B8A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B684F82B4CB6770023B8A1 /* ContentView.swift */; };
 		74B684FB2B4CB6780023B8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74B684FA2B4CB6780023B8A1 /* Assets.xcassets */; };
@@ -76,6 +79,8 @@
 		74499A012B4F44F700E643B9 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		74499A052B4F5D9200E643B9 /* CoreCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreCollectionView.swift; sourceTree = "<group>"; };
 		74499A452B50481500E643B9 /* CollectionViewCustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCustomLayout.swift; sourceTree = "<group>"; };
+		74499A4B2B504DC500E643B9 /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
+		74499A4D2B504E0100E643B9 /* GalleryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCellViewModel.swift; sourceTree = "<group>"; };
 		74B684F32B4CB6770023B8A1 /* MobileCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B684F62B4CB6770023B8A1 /* MobileCodingChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCodingChallengeApp.swift; sourceTree = "<group>"; };
 		74B684F82B4CB6770023B8A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74B685432B4DA3A90023B8A1 /* Alamofire in Frameworks */,
+				74499A4A2B504DA700E643B9 /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +146,7 @@
 		74499A002B4F42CA00E643B9 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				74499A472B504D5500E643B9 /* Cell */,
 				74499A012B4F44F700E643B9 /* CollectionView.swift */,
 				74499A052B4F5D9200E643B9 /* CoreCollectionView.swift */,
 				74499A452B50481500E643B9 /* CollectionViewCustomLayout.swift */,
@@ -155,6 +162,15 @@
 				74B685362B4CF1250023B8A1 /* PhotoGalleryCoordinator.swift */,
 			);
 			path = "Photo Gallery";
+			sourceTree = "<group>";
+		};
+		74499A472B504D5500E643B9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				74499A4B2B504DC500E643B9 /* GalleryCell.swift */,
+				74499A4D2B504E0100E643B9 /* GalleryCellViewModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		74B684EA2B4CB6770023B8A1 = {
@@ -335,6 +351,7 @@
 			name = MobileCodingChallenge;
 			packageProductDependencies = (
 				74B685422B4DA3A90023B8A1 /* Alamofire */,
+				74499A492B504DA700E643B9 /* NukeUI */,
 			);
 			productName = MobileCodingChallenge;
 			productReference = 74B684F32B4CB6770023B8A1 /* MobileCodingChallenge.app */;
@@ -410,6 +427,7 @@
 			mainGroup = 74B684EA2B4CB6770023B8A1;
 			packageReferences = (
 				74B685412B4DA3A90023B8A1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				74499A482B504DA700E643B9 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = 74B684F42B4CB6770023B8A1 /* Products */;
 			projectDirPath = "";
@@ -470,6 +488,7 @@
 				744999F52B4E2EE100E643B9 /* TopicSubmission.swift in Sources */,
 				74B684F92B4CB6770023B8A1 /* ContentView.swift in Sources */,
 				74499A062B4F5D9200E643B9 /* CoreCollectionView.swift in Sources */,
+				74499A4E2B504E0100E643B9 /* GalleryCellViewModel.swift in Sources */,
 				744999EB2B4E2C9A00E643B9 /* Social.swift in Sources */,
 				74B6853C2B4CF2700023B8A1 /* Route.swift in Sources */,
 				744999E92B4E2C6E00E643B9 /* ProfileImage.swift in Sources */,
@@ -477,6 +496,7 @@
 				74B6854A2B4DA63F0023B8A1 /* Constant.swift in Sources */,
 				74B685402B4DA2B90023B8A1 /* APIService.swift in Sources */,
 				74B685602B4DF8F60023B8A1 /* PhotosRoutes.swift in Sources */,
+				74499A4C2B504DC500E643B9 /* GalleryCell.swift in Sources */,
 				744999EF2B4E2D2200E643B9 /* Sponsorship.swift in Sources */,
 				744999F32B4E2EBF00E643B9 /* User.swift in Sources */,
 				74B684F72B4CB6770023B8A1 /* MobileCodingChallengeApp.swift in Sources */,
@@ -809,6 +829,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		74499A482B504DA700E643B9 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.0.0;
+			};
+		};
 		74B685412B4DA3A90023B8A1 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -820,6 +848,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		74499A492B504DA700E643B9 /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74499A482B504DA700E643B9 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
 		74B685422B4DA3A90023B8A1 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 74B685412B4DA3A90023B8A1 /* XCRemoteSwiftPackageReference "Alamofire" */;
