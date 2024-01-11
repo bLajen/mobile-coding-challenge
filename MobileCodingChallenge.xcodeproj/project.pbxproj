@@ -23,6 +23,8 @@
 		74499A4A2B504DA700E643B9 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 74499A492B504DA700E643B9 /* NukeUI */; };
 		74499A4C2B504DC500E643B9 /* GalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74499A4B2B504DC500E643B9 /* GalleryCell.swift */; };
 		74499A4E2B504E0100E643B9 /* GalleryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74499A4D2B504E0100E643B9 /* GalleryCellViewModel.swift */; };
+		74499A502B50552200E643B9 /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74499A4F2B50552200E643B9 /* DeviceRotationViewModifier.swift */; };
+		74499A522B5055AF00E643B9 /* UICollectionView+hosting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74499A512B5055AF00E643B9 /* UICollectionView+hosting.swift */; };
 		74B684F72B4CB6770023B8A1 /* MobileCodingChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B684F62B4CB6770023B8A1 /* MobileCodingChallengeApp.swift */; };
 		74B684F92B4CB6770023B8A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B684F82B4CB6770023B8A1 /* ContentView.swift */; };
 		74B684FB2B4CB6780023B8A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74B684FA2B4CB6780023B8A1 /* Assets.xcassets */; };
@@ -81,6 +83,8 @@
 		74499A452B50481500E643B9 /* CollectionViewCustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCustomLayout.swift; sourceTree = "<group>"; };
 		74499A4B2B504DC500E643B9 /* GalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCell.swift; sourceTree = "<group>"; };
 		74499A4D2B504E0100E643B9 /* GalleryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCellViewModel.swift; sourceTree = "<group>"; };
+		74499A4F2B50552200E643B9 /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationViewModifier.swift; sourceTree = "<group>"; };
+		74499A512B5055AF00E643B9 /* UICollectionView+hosting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+hosting.swift"; sourceTree = "<group>"; };
 		74B684F32B4CB6770023B8A1 /* MobileCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B684F62B4CB6770023B8A1 /* MobileCodingChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCodingChallengeApp.swift; sourceTree = "<group>"; };
 		74B684F82B4CB6770023B8A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -146,10 +150,10 @@
 		74499A002B4F42CA00E643B9 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				74499A472B504D5500E643B9 /* Cell */,
 				74499A012B4F44F700E643B9 /* CollectionView.swift */,
 				74499A052B4F5D9200E643B9 /* CoreCollectionView.swift */,
 				74499A452B50481500E643B9 /* CollectionViewCustomLayout.swift */,
+				74499A472B504D5500E643B9 /* Cell */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -196,8 +200,8 @@
 		74B684F52B4CB6770023B8A1 /* MobileCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				74499A002B4F42CA00E643B9 /* CollectionView */,
 				74B685202B4CB99E0023B8A1 /* App */,
+				74499A002B4F42CA00E643B9 /* CollectionView */,
 				74B685382B4CF1760023B8A1 /* Navigation */,
 				74B685462B4DA5760023B8A1 /* Common */,
 				74B6853D2B4CF5470023B8A1 /* Network */,
@@ -293,6 +297,8 @@
 				744999FC2B4EEB8100E643B9 /* Encodable+JSON.swift */,
 				74B685472B4DA59D0023B8A1 /* ErrorPublisher.swift */,
 				74B685492B4DA63F0023B8A1 /* Constant.swift */,
+				74499A4F2B50552200E643B9 /* DeviceRotationViewModifier.swift */,
+				74499A512B5055AF00E643B9 /* UICollectionView+hosting.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -484,6 +490,7 @@
 				74B6853A2B4CF1E20023B8A1 /* Coordinator.swift in Sources */,
 				74B6855A2B4DF6D50023B8A1 /* PhotosService.swift in Sources */,
 				74B685242B4CBE6F0023B8A1 /* PhotoGalleryView.swift in Sources */,
+				74499A502B50552200E643B9 /* DeviceRotationViewModifier.swift in Sources */,
 				744999ED2B4E2CDA00E643B9 /* Sponsor.swift in Sources */,
 				744999F52B4E2EE100E643B9 /* TopicSubmission.swift in Sources */,
 				74B684F92B4CB6770023B8A1 /* ContentView.swift in Sources */,
@@ -497,6 +504,7 @@
 				74B685402B4DA2B90023B8A1 /* APIService.swift in Sources */,
 				74B685602B4DF8F60023B8A1 /* PhotosRoutes.swift in Sources */,
 				74499A4C2B504DC500E643B9 /* GalleryCell.swift in Sources */,
+				74499A522B5055AF00E643B9 /* UICollectionView+hosting.swift in Sources */,
 				744999EF2B4E2D2200E643B9 /* Sponsorship.swift in Sources */,
 				744999F32B4E2EBF00E643B9 /* User.swift in Sources */,
 				74B684F72B4CB6770023B8A1 /* MobileCodingChallengeApp.swift in Sources */,

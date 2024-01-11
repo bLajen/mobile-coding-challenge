@@ -16,6 +16,7 @@ protocol PhotoGalleryViewModelProtocol {
 final class PhotoGalleryViewModel: PhotoGalleryViewModelProtocol, ObservableObject {
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, PhotoResponse>
     
+    @Published var orientation: UIDeviceOrientation = UIDeviceOrientation.unknown
     @Published var photos: [PhotoResponse] = []
     @Published var snapshot: Snapshot = {
         var initialSnapshot = Snapshot()
