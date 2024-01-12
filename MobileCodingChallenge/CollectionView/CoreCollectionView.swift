@@ -36,7 +36,7 @@ where SectionType: Hashable & Sendable,
         cancellables.insert(
             updateScrollPosition.sink { [weak self] item in
                 self?.scrollToItem(at: IndexPath(item: item, section: 0),
-                                   at: .centeredVertically,
+                                   at: .top,
                                    animated: false)
             }
         )
