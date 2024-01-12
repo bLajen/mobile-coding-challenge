@@ -25,24 +25,15 @@ struct PhotoGalleryDetailView: View {
                         }
                         VStack {
                             Spacer() // Pushes the banner to the bottom
-                            HStack {
-                                Text(viewModel.photos[index].createdAt ?? "")
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal, 16)
-                                Text(viewModel.photos[index].altDescription ?? "")
-                                    .foregroundColor(.white)
-                                    .padding(.horizontal, 16)
-                                Spacer()
-                            }
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 8)
-                            .background(Color.black.opacity(0.8))
-                            .edgesIgnoringSafeArea(.horizontal)
+                            banner(index: index)
                         }
                     }
                     .background(.clear)
                     .shadow(radius: 20)
                 }
+            }
+            .onChange(of: viewModel.selectedImageIndex) { newValue in
+                viewModel.imageIndexChanged(indexPath: newValue)
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .ignoresSafeArea()
@@ -50,6 +41,22 @@ struct PhotoGalleryDetailView: View {
                 viewModel.orientation = newOrientation
             }
         }
+    }
+    
+    private func banner(index: Int) -> some View {
+        HStack {
+            Text(viewModel.photos[index].createdAt ?? "")
+                .foregroundColor(.white)
+                .padding(.horizontal, 16)
+            Text(viewModel.photos[index].altDescription ?? "")
+                .foregroundColor(.white)
+                .padding(.horizontal, 16)
+            Spacer()
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 8)
+        .background(Color.black.opacity(0.8))
+        .edgesIgnoringSafeArea(.horizontal)
     }
 }
 

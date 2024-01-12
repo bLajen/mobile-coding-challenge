@@ -11,10 +11,16 @@ import SwiftUI
 final class PhotoGalleryCoordinator: Coordinator {
     @Published var path = NavigationPath()
     
-    private let photoGalleryViewModel = PhotoGalleryViewModel()
+    private(set) var photoGalleryDetailViewModel: PhotoGalleryDetailViewModel
+    private let photoGalleryViewModel: PhotoGalleryViewModel
     private var cancellables = Set<AnyCancellable>()
     
+    let imageIndexChanged = PassthroughSubject<Int, Never>()
+    
     init() {
+        photoGalleryViewModel = PhotoGalleryViewModel(updateScrollPosition: imageIndexChanged)
+        photoGalleryDetailViewModel = PhotoGalleryDetailViewModel(photos: [], selectedImageIndex: 0)
+        
         bind()
     }
     
@@ -30,16 +36,23 @@ final class PhotoGalleryCoordinator: Coordinator {
         )
     }
     
-    private func showDetailView(selectedImageIndex: Int) {
+    func showDetailView(selectedImageIndex: Int) {
         let detailModel = photoGalleryViewModel.photos.map { PhotoDetailModel(id: $0.id,
                                                                               createdAt: $0.createdAt,
                                                                               altDescription: $0.altDescription,
                                                                               width: $0.width,
                                                                               height: $0.height,
                                                                               urls: $0.urls) }
-        let viewModel = PhotoGalleryDetailViewModel(photos: detailModel,
-                                                    selectedImageIndex: selectedImageIndex)
-        push(.detail(viewModel: viewModel))
+        
+        photoGalleryDetailViewModel = PhotoGalleryDetailViewModel(photos: detailModel,
+                                                                  selectedImageIndex: selectedImageIndex)
+        cancellables.insert(
+            photoGalleryDetailViewModel.updateScrollPosition
+                .sink { [weak self] index in
+                    self?.imageIndexChanged.send(index) }
+        )
+        
+        
+        push(.detail(viewModel: photoGalleryDetailViewModel))
     }
 }
-
