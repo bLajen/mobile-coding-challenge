@@ -10,7 +10,6 @@ import NukeUI
 
 struct GalleryCell: View {
     var viewModel: GalleryCellViewModel
-    // TODO: Remove colors
     var body: some View {
         ZStack {
             LazyImage(url: URL(string: viewModel.item.urls?.regular ?? "")) { state in
