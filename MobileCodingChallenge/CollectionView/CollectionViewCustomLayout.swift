@@ -21,7 +21,6 @@ class CollectionViewCustomLayout: UICollectionViewLayout {
     @Binding private var orientation: UIDeviceOrientation
     
     //Configuration properties
-    private let cellPadding: CGFloat = 0
     private var cache: [UICollectionViewLayoutAttributes] = []
     private var contentHeight: CGFloat = 0
     private var numberOfColumns = 2
