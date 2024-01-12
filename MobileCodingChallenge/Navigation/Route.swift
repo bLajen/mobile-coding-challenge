@@ -22,6 +22,8 @@ enum Route {
     }
 }
 
+// MARK: - Hashable & Identifiable
+
 extension Route: Hashable, Identifiable {
     var id: Int { UUID().hashValue }
     

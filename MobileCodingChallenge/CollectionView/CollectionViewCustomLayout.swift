@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 
 protocol CollectionViewCustomLayoutDelegate: AnyObject {
+    /// Delegate height calculation for collection view items.
     func collectionView(_ collectionView: UICollectionView,
                         heightForPhotoAtIndexPath indexPath: IndexPath,
                         cellWidth: CGFloat) -> CGFloat
@@ -18,7 +19,8 @@ class CollectionViewCustomLayout: UICollectionViewLayout {
     weak var delegate: CollectionViewCustomLayoutDelegate?
     
     @Binding private var orientation: UIDeviceOrientation
-
+    
+    //Configuration properties
     private let cellPadding: CGFloat = 0
     private var cache: [UICollectionViewLayoutAttributes] = []
     private var contentHeight: CGFloat = 0
@@ -47,7 +49,7 @@ class CollectionViewCustomLayout: UICollectionViewLayout {
         
         super.init(coder: decoder)
     }
-    
+    //Layout calculating attributes for each item
     override func prepare() {
         guard let collectionView = collectionView,
               collectionView.numberOfSections > 0 else { return }
@@ -76,6 +78,8 @@ class CollectionViewCustomLayout: UICollectionViewLayout {
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             attributes.frame = frame
             cache.append(attributes)
+            
+            //Update content height and yOffset for next item
             contentHeight = max(contentHeight, frame.maxY)
             yOffset[column] = yOffset[column] + height
             column = column < (numberOfColumns - 1) ? (column + 1) : 0

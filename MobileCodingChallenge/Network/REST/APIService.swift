@@ -18,6 +18,7 @@ protocol APIService {
 }
 
 extension APIService {
+    //Makes an API request and returns a publisher for the response
     func request<T: Decodable>(session: Session = .default,
                                route: RouteType,
                                queue: DispatchQueue = .main) -> APIPublisher<T> {

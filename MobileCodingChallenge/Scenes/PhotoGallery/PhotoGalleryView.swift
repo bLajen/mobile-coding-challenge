@@ -22,6 +22,7 @@ struct PhotoGalleryView: View {
                            photos: $viewModel.photos,
                            orientation: $orientation,
                            didItemSelectAt: viewModel.didItemSelectAt,
+                           updateScrollPosition: viewModel.updateScrollPosition,
                            fetchMoreGalleryItem: viewModel.fetchMoreGalleryItem,
                            collectionViewLayout: collectionViewCustomLayout(),
                            cellProvider: cellProvider)
@@ -32,7 +33,7 @@ struct PhotoGalleryView: View {
     }
 }
 
-//MARK: Collection View
+// MARK: - Collection View
 
 extension PhotoGalleryView {
     func collectionViewCustomLayout() -> CollectionViewCustomLayout {
