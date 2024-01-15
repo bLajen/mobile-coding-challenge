@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PhotoGalleryView: View {
     @ObservedObject var viewModel: PhotoGalleryViewModel
-    @State private var orientation = UIDeviceOrientation.unknown
     
     let cellRegistration: UICollectionView.CellRegistration = .hosting { (idx: IndexPath, item: PhotoResponse) in
         let viewModel = GalleryCellViewModel(item: item)
@@ -19,11 +18,8 @@ struct PhotoGalleryView: View {
     var body: some View {
         ZStack(alignment: .center) {
             CollectionView(snapshot: viewModel.snapshot,
-                           photos: $viewModel.photos,
-                           orientation: $orientation,
-                           didItemSelectAt: viewModel.didItemSelectAt,
-                           updateScrollPosition: viewModel.updateScrollPosition,
-                           fetchMoreGalleryItem: viewModel.fetchMoreGalleryItem,
+                           viewModel: viewModel.collectionViewModel,
+                           orientation: $viewModel.orientation,
                            collectionViewLayout: collectionViewCustomLayout(),
                            cellProvider: cellProvider)
         }

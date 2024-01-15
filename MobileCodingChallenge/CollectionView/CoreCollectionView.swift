@@ -40,7 +40,6 @@ where SectionType: Hashable & Sendable,
                                    animated: false)
             }
         )
-        
     }
     
     required init?(coder: NSCoder) {
