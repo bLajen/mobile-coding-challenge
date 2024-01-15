@@ -31,18 +31,21 @@ final class PhotoGalleryCoordinator: Coordinator {
     
     private func bind() {
         cancellables.insert(
-            photoGalleryViewModel.didItemSelectAt
+            photoGalleryViewModel
+                .collectionViewModel
+                .didItemSelectAt
                 .sink { [weak self] indexPath in self?.showDetailView(selectedImageIndex: indexPath.item) }
         )
     }
     
     func showDetailView(selectedImageIndex: Int) {
-        let detailModel = photoGalleryViewModel.photos.map { PhotoDetailModel(id: $0.id,
-                                                                              createdAt: $0.createdAt,
-                                                                              altDescription: $0.altDescription,
-                                                                              width: $0.width,
-                                                                              height: $0.height,
-                                                                              urls: $0.urls) }
+        let detailModel = photoGalleryViewModel.collectionViewModel.photos
+            .map { PhotoDetailModel(id: $0.id,
+                                    createdAt: $0.createdAt,
+                                    altDescription: $0.altDescription,
+                                    width: $0.width,
+                                    height: $0.height,
+                                    urls: $0.urls) }
         
         photoGalleryDetailViewModel = PhotoGalleryDetailViewModel(photos: detailModel,
                                                                   selectedImageIndex: selectedImageIndex)

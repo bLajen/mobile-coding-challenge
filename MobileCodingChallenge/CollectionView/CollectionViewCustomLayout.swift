@@ -24,7 +24,6 @@ class CollectionViewCustomLayout: UICollectionViewLayout {
     private var cache: [UICollectionViewLayoutAttributes] = []
     private var contentHeight: CGFloat = 0
     private var numberOfColumns = 2
-    
     private var contentWidth: CGFloat {
         guard let collectionView = collectionView else {
             return 0
@@ -67,7 +66,7 @@ class CollectionViewCustomLayout: UICollectionViewLayout {
             let photoHeight = delegate?.collectionView(collectionView,
                                                        heightForPhotoAtIndexPath: indexPath,
                                                        cellWidth: columnWidth) ?? 180
-
+            
             let height = photoHeight
             let frame = CGRect(x: xOffset[column],
                                y: yOffset[column],

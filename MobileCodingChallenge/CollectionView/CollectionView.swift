@@ -15,14 +15,7 @@ where SectionType: Hashable & Sendable,
     typealias DataSource = UICollectionViewDiffableDataSource<SectionType, ItemType>
     typealias Snapshot = NSDiffableDataSourceSnapshot<SectionType, ItemType>
     
-    //Bindings
-    @Binding private var photos: [PhotoResponse]
-    @Binding private var orientation: UIDeviceOrientation
-    
-    //Subjects
-    private var didItemSelectAt: PassthroughSubject<IndexPath, Never>
-    private var updateScrollPosition: PassthroughSubject<Int, Never>
-    private var fetchMoreGalleryItem: PassthroughSubject<Void, Never>
+    @ObservedObject var viewModel: CollectionViewModel
     
     //CollectionView configuration properties
     private let cellProvider: DataSource.CellProvider
@@ -30,22 +23,14 @@ where SectionType: Hashable & Sendable,
     private let collectionViewLayout: CollectionViewCustomLayout
     
     init(snapshot: Snapshot,
-         photos: Binding<[PhotoResponse]>,
+         viewModel: CollectionViewModel,
          orientation: Binding<UIDeviceOrientation>,
-         didItemSelectAt: PassthroughSubject<IndexPath, Never>,
-         updateScrollPosition: PassthroughSubject<Int, Never>,
-         fetchMoreGalleryItem: PassthroughSubject<Void, Never>,
          collectionViewLayout: CollectionViewCustomLayout,
          cellProvider: @escaping DataSource.CellProvider) {
-        self._photos = photos
-        self._orientation = orientation
-        
-        self.didItemSelectAt = didItemSelectAt
-        self.fetchMoreGalleryItem = fetchMoreGalleryItem
-        self.snapshot = snapshot
         self.cellProvider = cellProvider
         self.collectionViewLayout = collectionViewLayout
-        self.updateScrollPosition = updateScrollPosition
+        self.viewModel = viewModel
+        self.snapshot = snapshot
     }
 }
 
@@ -57,7 +42,7 @@ extension CollectionView: UIViewRepresentable {
         collectionViewLayout.delegate = context.coordinator
         let collectionView = BaseCollectionView(frame: .zero,
                                                 collectionViewLayout: collectionViewLayout,
-                                                updateScrollPosition: updateScrollPosition,
+                                                updateScrollPosition: viewModel.updateScrollPosition,
                                                 cellProvider: cellProvider)
         collectionView.delegate = context.coordinator
         
@@ -68,37 +53,28 @@ extension CollectionView: UIViewRepresentable {
     func updateUIView(_ uiView: BaseCollectionView,
                       context: Context) {
         uiView.apply(snapshot, animatingDifferences: false)
+        
     }
     
     func makeCoordinator() -> Coordinator {
-        Coordinator(photos: $photos,
-                    didItemSelectAt: didItemSelectAt,
-                    fetchMoreGalleryItem: fetchMoreGalleryItem)
+        Coordinator(viewModel: viewModel)
     }
     
     // MARK: - Coordinator
     final class Coordinator: NSObject,
                              CollectionViewCustomLayoutDelegate,
                              UICollectionViewDelegate {
-        @Binding private var photos: [PhotoResponse]
         
-        private var didItemSelectAt: PassthroughSubject<IndexPath, Never>
-        private var fetchMoreGalleryItem: PassthroughSubject<Void, Never>
-        
-        init(photos: Binding<[PhotoResponse]>,
-             didItemSelectAt: PassthroughSubject<IndexPath, Never>,
-             fetchMoreGalleryItem: PassthroughSubject<Void, Never>) {
-            self._photos = photos
-            
-            self.didItemSelectAt = didItemSelectAt
-            self.fetchMoreGalleryItem = fetchMoreGalleryItem
+        private var viewModel: CollectionViewModel
+        init(viewModel: CollectionViewModel) {
+            self.viewModel = viewModel
         }
         
         //Calculates the height for a photo cell at a specific index path.
         func collectionView(_ collectionView: UICollectionView,
                             heightForPhotoAtIndexPath indexPath: IndexPath,
                             cellWidth: CGFloat) -> CGFloat {
-            let item = photos[indexPath.row]
+            let item = viewModel.photos[indexPath.row]
             
             guard let width = item.width,
                   let height = item.height else { return 0 }
@@ -109,7 +85,7 @@ extension CollectionView: UIViewRepresentable {
         }
         
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            didItemSelectAt.send(indexPath)
+            viewModel.didItemSelectAt.send(indexPath)
         }
         
         //Detects when scrolling has ended to fetch more items if needed
@@ -123,7 +99,7 @@ extension CollectionView: UIViewRepresentable {
             
             let reloadThreshold = CGFloat(30)
             if offsetY > sizeHeight + reloadThreshold {
-                fetchMoreGalleryItem.send()
+                viewModel.fetchMoreGalleryItem.send()
                 //TODO: Add loading state with a delay
             }
         }
